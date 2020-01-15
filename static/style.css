@@ -54,7 +54,7 @@ h1 {
 }
 
 .upload-icon {
-	margin: 5px 2px 2px 2px;
+	margin: 2px 2px 2px 2px;
 }
 
 .upload-input {
@@ -67,9 +67,10 @@ h1 {
 }
 
 .btn {
+	margin-top: 5px;
 	display: block;
 	width: 140px;
-	height: 40px;
+	height: 60px;
 	background: darkmagenta;
 	color: #fff;
 	border-radius: 3px;
