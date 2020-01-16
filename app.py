@@ -1,25 +1,36 @@
-from PIL import Image
-import cv2
-import pytesseract
-import requests
-import shutil
-import os
-from io import BytesIO
-#import urllib.request
+from flask import Flask, jsonify, request, render_template, redirect
+from datetime import datetime
+from data import *
+
+app = Flask(__name__)
 
 
-response = []
-url = 'https://img.gadgethacks.com/img/37/33/63696445509613/0/format-whatsapp-messages-with-italic-bold-strikethrough-monospaced-text.w1456.jpg'
+@app.route("/create", methods=['POST'])
+def getData():
+	docName = request.form['docname']
+	email = request.form['email']
 
-#resp = request.get(url, stream=True)
-#with open('ingggg.jpg', 'wb') as out_file:
-#    shutil.copyfileobj(resp.raw, out_file)
-    
+	if request.files:
+		image = request.files['dropfile']
 
-response = requests.get(url)
-image =  Image.open(BytesIO(response.content))
-#image = Image.open(urllib.request.urlopen(url))
-text = pytesseract.image_to_string(image)
-print(text)
+		response = getImgDetails(docName, email, image)
 
+	else:
+		response = "Please add a file"
+
+
+	result = {"response":response}
+
+
+	return jsonify(result)
+
+
+@app.route('/')
+def index():
+	return render_template('index.html')
+
+
+
+if __name__ == '__main__':
+	app.run(host="localhost", port=4000, debug=True)
 
