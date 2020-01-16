@@ -120,7 +120,7 @@ def getImgUrl(profile_image):
 
 	save_file = cloudUpload.upload(
 				profile_image.filename,
-				folder = "FlaskProjects"
+				folder = "imageToText"
 				)
 	image_url = save_file['url']
 	image_public_id = save_file['public_id']
