@@ -10,8 +10,10 @@
     <link href="/static/style.css" rel="stylesheet" />
   </head>
   <body>
+  	<form method="POST" action="/create" enctype="multipart/form-data">
   	<div class="frame">
 	<div class="center">
+		
 		<div class="title">
 			<h1>Drop file to upload</h1>
 		</div>
@@ -23,10 +25,10 @@
 
 		<div class="dropzone">
 			<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-			<input name = "dropfile" type="file" class="upload-input" />
+			<input name = "dropfile" type="file" placeholder="" />
 		</div>
 
-		<button type="button" class="btn" name="uploadbutton">Upload file</button>
+		<button type="submit" class="btn" name="uploadbutton">Upload file</button>
 
 	</div>
-</div>
+</div></form>

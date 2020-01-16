@@ -5,7 +5,7 @@ from data import *
 app = Flask(__name__)
 
 
-@app.route("/user", methods=['POST'])
+@app.route("/create", methods=['POST'])
 def getData():
 	docName = request.form['docname']
 	email = request.form['email']

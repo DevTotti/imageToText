@@ -14,6 +14,7 @@ from datetime import datetime
 import cloudinary
 import cloudinary.uploader as cloudUpload
 import cloudinary.api as cloudAPI
+from io import BytesIO
 
 
 try:
@@ -119,7 +120,7 @@ def getImgUrl(profile_image):
 
 	save_file = cloudUpload.upload(
 				profile_image.filename,
-				folder = "imageToText"
+				folder = "FlaskProjects"
 				)
 	image_url = save_file['url']
 	image_public_id = save_file['public_id']
