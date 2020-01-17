@@ -108,6 +108,7 @@ def getImgText(image_url):
 	image =  Image.open(BytesIO(response.content))
 	#image = Image.open(urllib.request.urlopen(url))
 	text = pytesseract.image_to_string(image)
+	print(text)
 
 	return text
 
