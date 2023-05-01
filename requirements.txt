@@ -1,4 +1,4 @@
-Flask==1.1.1
+Flask==2.3.2
 Pillow==7.0.0
 pytesseract==0.3.0
 pymongo==3.9.0
